@@ -115,7 +115,8 @@ def build(rom,outp,repl,newcode=None,newicon=None):
     pre[0x18b]=0;pre[0x18f]|=4  # NoCrypto
     struct.pack_into('<I',pre,0x1b0,rfo//MU)
     struct.pack_into('<I',pre,0x1b4,al(rlen,MU)//MU)
-    tmp.seek(0);sb=tmp.read(0x200)
+    rhr=struct.unpack_from('<I',pre,0x1b8)[0]*MU
+    tmp.seek(0);sb=tmp.read(rhr)
     pre[0x1e0:0x200]=hashlib.sha256(sb).digest()
     ncchsize=al(rfo+rlen,MU)
     struct.pack_into('<I',pre,0x104,ncchsize//MU)
@@ -135,6 +136,7 @@ def build(rom,outp,repl,newcode=None,newicon=None):
         cur=al(cur,MU);f.seek(po*MU);d=f.read(ps*MU);out.seek(cur);out.write(d)
         newparts[i*2]=cur//MU;newparts[i*2+1]=ps;cur+=len(d)
     struct.pack_into('<16I',ncsd,0x120,*newparts)
+    struct.pack_into('<I',ncsd,0x300,al(cur,MU))  # card info: filled size
     # card image size: keep media size field (0x104) as original
     out.seek(0);out.write(ncsd)
     tmp.close();os.remove(outp+'.romfs');out.close()
