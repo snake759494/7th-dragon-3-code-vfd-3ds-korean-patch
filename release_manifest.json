@@ -1,0 +1,11 @@
+{
+ "version": "v1.0",
+ "asset": "7thDragon3_VFD_3DS_KO_v1.0.xdelta",
+ "asset_size": 56301475,
+ "asset_sha256": "55fa2255d73b386feff0dfc9e45daaccd75b1890f3744104faaa0cc3a7d0630b",
+ "source_3ds_size": 2147483648,
+ "source_3ds_md5": "0534966ca3b60a468e424b12cb59c82b",
+ "source_3ds_sha256": "5ac16175c110f15145d113ae9276343fcd5d73c55c55c1084148b73b5af4b2eb",
+ "result_3ds_size": 1759817728,
+ "result_3ds_sha256": "1e5dfa177744c3a7130edf03115bcbf7df43985bf277bf331b0850385231b6ce"
+}

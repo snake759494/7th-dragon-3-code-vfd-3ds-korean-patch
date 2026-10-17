@@ -1,0 +1,21 @@
+# 게임 원본·산출물 (배포하지 않음)
+*.3ds
+*.cia
+*.xdelta
+*.bin
+ext/
+cpk/
+tr/
+build/
+# 편집 명세
+tools/tutspec.py
+# 글꼴·외부 실행 파일·이미지
+*.ttf
+*.otf
+*.exe
+*.dll
+*.png
+azahar/
+# 파이썬
+__pycache__/
+*.pyc
